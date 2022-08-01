@@ -1,21 +1,23 @@
 const express = require('express');
-const { dirname } = require('path');
+const app = express();
 const PORT = process.env.PORT || 3333;
 const path = require('path');
-const app = express();
+
 const api_routes = require('./routes/api_routes');
 
-// Share static/browser files.
+// share static/browser files
 app.use(express.static(path.join(__dirname, 'browser')));
-// attach client side form data to request.body object
+
+// attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
+
+// middleware json data 
 app.use(express.json());
 
-// Load Routes
+// load routes
 app.use('/api', api_routes);
 
-// Start Server
+// start server
 app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`);
-}); 
- 
+    console.log(`Listening on da port ${PORT}`);
+});
