@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
 
-// middleware important, get and parses JSON data incoming 
+// middleware json data 
 app.use(express.json());
 
 // load routes

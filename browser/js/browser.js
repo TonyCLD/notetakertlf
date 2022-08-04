@@ -1,6 +1,6 @@
 const submit_btn = document.querySelector('#submit');
 const todos_div = document.querySelector('.todos');
-
+ 
 function outputToDos(data) {
     todos_div.innerHTML = '';
 
