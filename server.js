@@ -18,8 +18,13 @@ app.use(express.json());
 app.use('/api', api_routes);
 
 // loading html routes
+router.get('/notes', (request, response) => {
+    response.sendFile(path.join(__dirname, './notes.html'))
+});
+
+// loading html routes
 router.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, './public/index.html'))
+    response.sendFile(path.join(__dirname, './index.html'))
 });
 
 // start server

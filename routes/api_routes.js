@@ -10,7 +10,7 @@ function getNotes() {
 };
 
 // Get All todos
-todo_router.get('/public', (request, response) => {
+todo_router.get('/notes', (request, response) => {
     getNotes()
     .then(todo_data => {
         response.json(todo_data);
@@ -19,7 +19,7 @@ todo_router.get('/public', (request, response) => {
 });
 
 // // Post(create) all todos
-todo_router.post('/public', (request, response) => {
+todo_router.post('/notes', (request, response) => {
     getNotes()
         .then(todo_data => {
             const new_todo = request.body;
@@ -37,7 +37,7 @@ todo_router.post('/public', (request, response) => {
 }); 
 
 // Delete single todo
-todo_router.delete('/public/notes.html', (request, response) => {
+todo_router.delete('/notes/:id', (request, response) => {
     getTodoData()
         .then(todos => {
             const id = request.body.id;

@@ -1,17 +1,6 @@
 [
-  {
-    "title": "Take out trash",
-    "text": "Must separate recycling",
-    "id": 1
-  },
-  {
-    "title": "this",
-    "text": "fff",
-    "id": 2
-  },
-  {
-    "title": "new one",
-    "text": "tones",
-    "id": 3
-  }
+    {
+        "title":"Test Title",
+        "text":"Test text"
+    }
 ]
