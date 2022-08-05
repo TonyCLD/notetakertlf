@@ -36,25 +36,26 @@ todo_router.post('/public', (request, response) => {
 
 }); 
 
-// // Delete single todo
-// todo_router.delete('/public', (request, response) => {
-//     getTodoData()
-//         .then(todos => {
-//             const id = request.body.id;
-//             const obj = todos.find(todo => todo.id === id);
-//             const index = todos.indexOf(obj);
+// Delete single todo
+todo_router.delete('/public/notes.html', (request, response) => {
+    getTodoData()
+        .then(todos => {
+            const id = request.body.id;
+            console.log(request.body);
+            const obj = todos.find(todo => todo.id === id);
+            const index = todos.indexOf(obj);
             
-//             todos.splice(index, 1);
+            todos.splice(index, 1);
             
-//             fs.promises.writeFile(db_path, JSON.stringify(todos, null, 2))
-//                 .then(() => {
-//                     console.log('todos updated suceessfully');
-//                     response.json(todos);
-//                 }) 
-//                 .catch(err => console.log(err));
+            fs.promises.writeFile(db_path, JSON.stringify(todos, null, 2))
+                .then(() => {
+                    console.log('todos updated suceessfully');
+                    response.json(todos);
+                }) 
+                .catch(err => console.log(err));
             
-//         });
-// });
+        });
+});
 
 module.exports = todo_router;
 

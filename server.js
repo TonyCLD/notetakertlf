@@ -19,4 +19,4 @@ app.use('/api', api_routes);
 // start server
 app.listen(PORT, () => {
     console.log(`Listening on da port ${PORT}`);
-});
+}); 
