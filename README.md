@@ -1,6 +1,6 @@
 # notetakertlf
 
-https://github.com/TonyCLD/notetakertlf
+https://github.com/TonyCLD/notetakertlf  
 https://tonycld.github.io/notetakertlf
 
 This was very difficult for me and I spent many days (maybe a week) trying to understand the concepts and complete this mission. I think it's mostly complete. 
