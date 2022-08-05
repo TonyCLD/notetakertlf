@@ -1,4 +1,5 @@
 const express = require('express');
+const router = require('express').Router();
 const app = express();
 const PORT = process.env.PORT || 3333;
 const path = require('path');
@@ -15,6 +16,11 @@ app.use(express.json());
 
 // load routes
 app.use('/api', api_routes);
+
+// loading html routes
+router.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, './public/index.html'))
+});
 
 // start server
 app.listen(PORT, () => {
