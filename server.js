@@ -6,7 +6,7 @@ const path = require('path');
 const api_routes = require('./routes/api_routes');
 
 // share static/browser files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
@@ -15,17 +15,17 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // load routes
-app.use('/api', api_routes);
+app.use('/api/public/', api_routes);
 
 // loading html routes
 router.get('/notes', (request, response) => {
-    response.sendFile(path.join(__dirname, './notes.html'))
+    response.sendFile(path.join(__dirname, 'notes.html'))
 });
 
 // loading html routes
-router.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, './index.html'))
-});
+// router.get('*', (request, response) => {
+//     response.sendFile(path.join(__dirname, './index.html'))
+// });
 
 // start server
 app.listen(PORT, () => {
