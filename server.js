@@ -6,7 +6,7 @@ const path = require('path');
 const api_routes = require('./routes/api_routes');
 
 // share static/browser files
-app.use(express.static('public'));
+app.use('/notes', express.static(path.join(__dirname, 'public')))
 
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
