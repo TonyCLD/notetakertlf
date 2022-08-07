@@ -5,7 +5,11 @@ const PORT = process.env.PORT || 3333;
 const path = require('path');
 const api_routes = require('./routes/api_routes');
 
-app.use('/', api_routes);
+// load routes
+app.use('/api', api_routes);
+app.get('/', (request, response) => {
+    response.send('works!')
+});
 
 // more testing code from class
 // app.get('/', (request, response) => {
@@ -20,9 +24,6 @@ app.use(express.urlencoded({extended: true}));
 
 // middleware important, get and parses JSON data incoming 
 app.use(express.json());
-
-// load routes
-app.use('/api/public/', api_routes);
 
 // loading html routes
 router.get('/notes', (request, response) => {
