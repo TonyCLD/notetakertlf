@@ -5,12 +5,15 @@ const PORT = process.env.PORT || 3333;
 const path = require('path');
 const api_routes = require('./routes/api_routes');
 
-app.get('/', (request, response) => {
-    response.send("works!");
-})
+app.use('/', api_routes);
+
+// more testing code from class
+// app.get('/', (request, response) => {
+//     response.send("works!");
+// });
 
 // share static/browser files
-app.use('/notes', express.static(path.join(__dirname, 'public')))
+app.use('/notes', express.static(path.join(__dirname, 'index')))
 
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));

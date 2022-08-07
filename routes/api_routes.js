@@ -9,8 +9,15 @@ function getNotes() {
     .then(data => JSON.parse(data));
 };
 
-// Get All todos
-todo_router.get('./notes', (request, response) => {
+// Get All todos (some testing code)
+    // todo_router.get('/test', (request, response) => {
+    //     response.json({
+    //         name: "Tony",
+    //         aga: 57
+    //     });
+    // });
+
+todo_router.get('/api/notes', (request, response) => {
     getNotes()
     .then(todo_data => {
         response.json(todo_data);
@@ -19,7 +26,7 @@ todo_router.get('./notes', (request, response) => {
 });
 
 // // Post(create) all todos
-todo_router.post('./notes', (request, response) => {
+todo_router.post('/api/notes', (request, response) => {
     getNotes()
         .then(todo_data => {
             const new_todo = request.body;
@@ -37,7 +44,7 @@ todo_router.post('./notes', (request, response) => {
 }); 
 
 // Delete single todo
-todo_router.delete('./notes/:id', (request, response) => {
+todo_router.delete('/api/notes/:id', (request, response) => {
     getTodoData()
         .then(todos => {
             const id = request.body.id;
