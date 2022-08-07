@@ -7,9 +7,9 @@ const api_routes = require('./routes/api_routes');
 
 // load routes
 app.use('/api', api_routes);
-app.get('/', (request, response) => {
-    response.send('works!')
-});
+// app.get('/', (request, response) => {
+//     response.send('works!')
+// });
 
 // more testing code from class
 // app.get('/', (request, response) => {
@@ -17,7 +17,7 @@ app.get('/', (request, response) => {
 // });
 
 // share static/browser files
-app.use('/notes', express.static(path.join(__dirname, 'index')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
