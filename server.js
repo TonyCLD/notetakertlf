@@ -5,19 +5,11 @@ const PORT = process.env.PORT || 3333;
 const path = require('path');
 const api_routes = require('./routes/api_routes');
 
-// load routes
-app.use('/api', api_routes);
-// app.get('/', (request, response) => {
-//     response.send('works!')
-// });
-
-// more testing code from class
-// app.get('/', (request, response) => {
-//     response.send("works!");
-// });
-
 // share static/browser files
 app.use(express.static(path.join(__dirname, 'public')))
+
+// // load routes
+// app.use('/api', api_routes);
 
 // attach client-side form data to request.body object
 app.use(express.urlencoded({extended: true}));
@@ -39,3 +31,13 @@ router.get('*', (request, response) => {
 app.listen(PORT, () => {
     console.log(`Listening on da port ${PORT}`);
 }); 
+
+
+// app.get('/', (request, response) => {
+//     response.send('works!')
+// });
+
+// more testing code from class
+// app.get('/', (request, response) => {
+//     response.send("works!");
+// });
