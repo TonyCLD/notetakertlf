@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 3333;
 const path = require('path');
 const api_routes = require('./routes/api_routes');
 
+app.get('/', (request, response) => {
+    response.send("works!");
+})
+
 // share static/browser files
 app.use('/notes', express.static(path.join(__dirname, 'public')))
 
@@ -23,9 +27,9 @@ router.get('/notes', (request, response) => {
 });
 
 // loading html routes
-// router.get('*', (request, response) => {
-//     response.sendFile(path.join(__dirname, './index.html'))
-// });
+router.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, './index.html'))
+});
 
 // start server
 app.listen(PORT, () => {
