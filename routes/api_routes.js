@@ -17,7 +17,7 @@ function getNotes() {
     //     });
     // });
 
-todo_router.get('/notes', (request, response) => {
+todo_router.get('/api/notes', (request, response) => {
     getNotes()
     .then(todo_data => {
         response.json(todo_data);
