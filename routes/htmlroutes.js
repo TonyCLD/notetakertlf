@@ -1,5 +1,5 @@
 const todo_router = require('express').Router();
-const Model = require('app/lib/Model');
+// const Model = require('app/lib/Model');
 const path = require('path');
 
 // // loading html routes
@@ -7,14 +7,13 @@ const path = require('path');
 //     response.sendFile(path.join(__dirname, 'public/notes.html'))
 // });
 
-router.get('/', (req, res) => {
+todo_router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
   });
 
-router.get('*', (req, res) => {
+todo_router.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/notes.html'));
   });
   
   
-
-Model.exports = todo_router;
+module.exports = todo_router;
