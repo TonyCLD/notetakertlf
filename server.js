@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require('express').Router();
 const app = express();
-const PORT = process.env.PORT || 3333;
+// const PORT = process.env.PORT || 3333;
 const path = require('path');
 const routes = require('./routes/api_routes');
 const notesroutes = require('./routes/htmlroutes.js');
