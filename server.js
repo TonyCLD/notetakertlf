@@ -29,6 +29,6 @@ app.use('/', notesroutes);
 // });
 
 // start server
-app.listen(PORT, () => {
-    console.log(`Listening on da port ${PORT}`);
-}); 
+// app.listen(PORT, () => {
+//     console.log(`Listening on da port ${PORT}`);
+// }); 
