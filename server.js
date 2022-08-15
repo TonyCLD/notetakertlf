@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // // load routes
-app.use('/api', routes);
+app.use('/api', routes); 
 
 // // load routes, notes
 app.use('/', notesroutes);
