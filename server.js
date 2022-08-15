@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require('express').Router();
 const app = express();
-// let port = process.env.PORT;
+const port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
   console.log(`Listening on da port ${PORT}`);
