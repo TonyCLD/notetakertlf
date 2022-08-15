@@ -32,13 +32,3 @@ app.use('/', notesroutes);
 app.listen(PORT, () => {
     console.log(`Listening on da port ${PORT}`);
 }); 
-
-
-// app.get('/', (request, response) => {
-//     response.send('works!')
-// });
-
-// more testing code from class
-// app.get('/', (request, response) => {
-//     response.send("works!");
-// });
