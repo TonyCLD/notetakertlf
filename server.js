@@ -1,13 +1,13 @@
 const express = require('express');
 const router = require('express').Router();
 const app = express();
-const port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-  console.log(`Listening on da port ${PORT}`);
-}
-app.listen(port);
-// const PORT = process.env.PORT || 3333;
+// const port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 8000;
+//   console.log(`Listening on da port ${PORT}`);
+// }
+// app.listen(port);
+const PORT = process.env.PORT || 3333;
 const path = require('path');
 const routes = require('./routes/api_routes');
 const notesroutes = require('./routes/htmlroutes.js');
@@ -35,6 +35,6 @@ app.use('/', notesroutes);
 // });
 
 // start server
-// app.listen(PORT, () => {
-//     console.log(`Listening on da port ${PORT}`);
-// }); 
+app.listen(PORT, () => {
+    console.log(`Listening on da port ${PORT}`);
+}); 
