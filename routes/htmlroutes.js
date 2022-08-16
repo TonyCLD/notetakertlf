@@ -11,7 +11,7 @@ todo_router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
-todo_router.get('*', (req, res) => {
+todo_router.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/notes.html'));
   });
   
